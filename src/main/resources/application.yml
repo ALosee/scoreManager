@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/scoremanager?setUnicode=true&characterEncoding=utf8&useAffectedRows=true
+    username: root
+    password: 228274
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+
+
+mybatis:
+  type-aliases-package: com.jsy.scoremanager.domain
+  mapper-locations: classpath:mapper/*.xml
+
