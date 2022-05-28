@@ -38,7 +38,7 @@ public class SystemController {
      */
     @GetMapping("/login")
     public String login(){
-        return "/login";
+        return "login2.0";
     }
 
     /**
@@ -169,7 +169,7 @@ public class SystemController {
     @GetMapping("/logout")
     public String logout(HttpSession session){
         session.invalidate();
-        return "/login";
+        return "login";
     }
 
 

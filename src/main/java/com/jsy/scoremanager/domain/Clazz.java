@@ -31,4 +31,9 @@ public class Clazz {
 	public void setInfo(String info) {
 		this.info = info;
 	}
+
+	@Override
+	public String toString() {
+		return "Clazz{" + "id=" + id + ", name='" + name + '\'' + ", info='" + info + '\'' + '}';
+	}
 }

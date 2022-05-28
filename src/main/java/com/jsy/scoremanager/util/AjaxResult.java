@@ -1,12 +1,13 @@
 package com.jsy.scoremanager.util;
 
+import java.io.Serializable;
+
 /**
  * @Classname AjaxResult
  * @Description ajax json 返回数据
  * @Date 2019/6/25 10:21
- * @Created by WDD
  */
-public class AjaxResult {
+public class AjaxResult implements Serializable {
     private boolean success;
     private String message;
     private String imgurl;

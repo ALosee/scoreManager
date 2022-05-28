@@ -25,5 +25,9 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Admin{" + "id=" + id + ", username='" + username + '\'' + ", password='" + password + '\'' + '}';
+	}
 }
