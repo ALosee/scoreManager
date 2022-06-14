@@ -53,7 +53,7 @@
     <update id="addStudentNum" parameterType="int">
          update s_course
          set selected_num = (case
-            when selected_num = max_num then 50
+            when selected_num = max_num then 10
             when selected_num &lt; max_num then selected_num+1
             end
          )

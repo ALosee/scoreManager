@@ -140,7 +140,7 @@
                         if(r){
                             $.ajax({
                                 type: "post",
-                                url: [[@{/attendance/deleteAttendance}]],
+                                url: "attendance/deleteAttendance",
                                 data: {id: id},
                                 success: function(data){
                                     if(data.success){
@@ -183,7 +183,7 @@
                             } else{
                                 $.ajax({
                                     type: "post",
-                                    url: [[@{/attendance/addAttendance}]],
+                                    url: "/attendance/addAttendance",
                                 data: $("#addForm").serialize(),
                                     success: function(data){
                                     if(data.success){

@@ -95,16 +95,16 @@ public class StudentController {
                     return ajaxResult;
                 }
             }
-            File fileDir = UploadUtil.getImgDirFile();
-            for(Integer id : ids){
-                Student byId = studentService.findById(id);
-                if(!byId.getPhoto().isEmpty()){
-                    File file = new File(fileDir.getAbsolutePath() + File.separator + byId.getPhoto());
-                    if(file != null){
-                        file.delete();
-                    }
-                }
-            }
+            //File fileDir = UploadUtil.getImgDirFile();
+            //for(Integer id : ids){
+            //    Student byId = studentService.findById(id);
+            //    if(!byId.getPhoto().isEmpty()){
+            //        File file = new File(fileDir.getAbsolutePath() + File.separator + byId.getPhoto());
+            //        if(file != null){
+            //            file.delete();
+            //        }
+            //    }
+            //}
             int count = studentService.deleteStudent(ids);
             if(count > 0){
                 ajaxResult.setSuccess(true);
@@ -138,26 +138,26 @@ public class StudentController {
         AjaxResult ajaxResult = new AjaxResult();
         student.setSn(SnGenerateUtil.generateSn(student.getClazzId()));
 
-        // 存放上传图片的文件夹
-        File fileDir = UploadUtil.getImgDirFile();
-        for(MultipartFile fileImg : files){
-
-            // 拿到文件名
-            String extName = fileImg.getOriginalFilename().substring(fileImg.getOriginalFilename().lastIndexOf("."));
-            String uuidName = UUID.randomUUID().toString();
-
-            try {
-                // 构建真实的文件路径
-                File newFile = new File(fileDir.getAbsolutePath() + File.separator +uuidName+ extName);
-
-                // 上传图片到 -》 “绝对路径”
-                fileImg.transferTo(newFile);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            student.setPhoto(uuidName+extName);
-        }
+        //// 存放上传图片的文件夹
+        //File fileDir = UploadUtil.getImgDirFile();
+        //for(MultipartFile fileImg : files){
+        //
+        //    // 拿到文件名
+        //    String extName = fileImg.getOriginalFilename().substring(fileImg.getOriginalFilename().lastIndexOf("."));
+        //    String uuidName = UUID.randomUUID().toString();
+        //
+        //    try {
+        //        // 构建真实的文件路径
+        //        File newFile = new File(fileDir.getAbsolutePath() + File.separator +uuidName+ extName);
+        //
+        //        // 上传图片到 -》 “绝对路径”
+        //        fileImg.transferTo(newFile);
+        //
+        //    } catch (IOException e) {
+        //        e.printStackTrace();
+        //    }
+        //    student.setPhoto(uuidName+extName);
+        //}
         //保存学生信息到数据库
         try{
             int count = studentService.addStudent(student);

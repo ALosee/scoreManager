@@ -44,11 +44,24 @@ public class ClazzMapperTest {
         System.out.println(i);
     }
     @Test
+    void testEditClazz(){
+        Clazz clazz = new Clazz();
+        clazz.setId(7);
+        clazz.setInfo("软件2班info...up");
+        clazz.setName("软件2班");
+        int i = clazzMapper.editClazz(clazz);
+        System.out.println(i);
+    }
+    @Test
     void deleteClazz(){
         List<Integer> list = new ArrayList<>();
         list.add(6);
         int i = clazzMapper.deleteClazz(list);
         System.out.println(i);
     }
-
+    @Test
+    void testFindByName(){
+        Clazz clazz = clazzMapper.findByName("软件一班");
+        System.out.println(clazz);
+    }
 }

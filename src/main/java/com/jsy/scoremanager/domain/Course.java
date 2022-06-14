@@ -66,4 +66,9 @@ public class Course {
     public void setInfo(String info) {
         this.info = info;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" + "id=" + id + ", name='" + name + '\'' + ", teacherId=" + teacherId + ", courseDate='" + courseDate + '\'' + ", selectedNum=" + selectedNum + ", maxNum=" + maxNum + ", info='" + info + '\'' + '}';
+    }
 }

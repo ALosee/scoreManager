@@ -136,14 +136,14 @@
                         if(r){
                             $.ajax({
                                 type: "post",
-                                url: [[@{/selectedCourse/deleteSelectedCourse}]],
+                                url: "/selectedCourse/deleteSelectedCourse",
                                 data: {id: id},
                                 success: function(msg){
-                                    if(msg == "success"){
+                                    if(msg.success){
                                         $.messager.alert("消息提醒","删除成功!","info");
                                         //刷新表格
                                         $("#dataList").datagrid("reload");
-                                    }else if(msg == "not found"){
+                                    }else if(msg === "not found"){
                                         $.messager.alert("消息提醒","不存在该选课记录!","info");
                                     }else{
                                         $.messager.alert("消息提醒","删除失败!","warning");
@@ -181,7 +181,7 @@
                             } else{
                                 $.ajax({
                                     type: "post",
-                                    url: [[@{/selectedCourse/addSelectedCourse}]],
+                                    url: "/selectedCourse/addSelectedCourse",
                                     data: $("#addForm").serialize(),
                                     success: function(data){
                                         if(data.success){
